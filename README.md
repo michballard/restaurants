@@ -1,4 +1,4 @@
-# RestaurantReviews
+# Restaurants
 
 ## Purpose
 
