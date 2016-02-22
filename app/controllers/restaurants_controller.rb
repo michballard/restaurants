@@ -5,10 +5,11 @@ class RestaurantsController < ApplicationController
 	end
 
 	def new
+		@restaurant = Restaurant.new
 	end
 
 	def create
-		Restaurant.create(restaurant_params)
+		@restaurant = Restaurant.create(restaurant_params)
 		redirect_to '/restaurants'
 	end
 
