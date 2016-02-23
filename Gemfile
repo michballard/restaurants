@@ -32,8 +32,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Markup language
 gem 'haml', '~> 4.0', '>= 4.0.7'
 gem "haml-rails", "~> 0.9"
+
+# User authentication
+gem 'devise'
 
 
 group :development, :test do
