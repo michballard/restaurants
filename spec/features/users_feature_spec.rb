@@ -36,3 +36,30 @@ feature "User can sign in and out" do
     end
   end
 end
+
+feature "User must be logged in" do 
+
+  def create_user
+    visit('/')
+    click_link('Sign up')
+    fill_in('Email', with: 'test@example.com')
+    fill_in('Password', with: 'testtest')
+    fill_in('Password confirmation', with: 'testtest')
+    click_button('Sign up')
+  end 
+
+  def create_restaurant
+    visit('/')
+    click_link 'Add a restaurant'
+    fill_in 'Name', with: 'McDonalds'
+    click_button 'Create Restaurant'
+  end 
+
+  scenario "to create a restaurant" do 
+    visit('/')
+    expect(page).not_to have_link 'Add a restaurant'
+    create_user
+    create_restaurant
+    expect(page).to have_css 'h2', text: 'McDonalds'
+  end 
+end 

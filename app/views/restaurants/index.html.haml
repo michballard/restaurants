@@ -23,4 +23,5 @@
   %h1 No restaurants yet!
 
 %div
-  %a(href='/restaurants/new') Add a restaurant
+  - if user_signed_in?
+    = link_to "Add a restaurant", new_restaurant_path
