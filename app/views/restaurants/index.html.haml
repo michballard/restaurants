@@ -17,6 +17,8 @@
             = review.thoughts
             %strong= review.rating
             \/5
+            %p= pluralize review.endorsements.count, 'endorsement'
+            = link_to "Endorse Review", review_endorsements_path(review), method: :post
     - else
       %p No reviews
 
