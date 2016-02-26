@@ -10,6 +10,7 @@
   %body
     %div
       - if user_signed_in?
+        = link_to "Add a restaurant", new_restaurant_path
         = link_to "Sign out", destroy_user_session_path, method: :delete
       - else
         = link_to "Sign in", new_user_session_path
