@@ -13,3 +13,4 @@
 /tmp
 /public/system/restaurants/images
 .byebug_history
+/config/secrets.yml
