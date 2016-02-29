@@ -90,4 +90,17 @@ feature 'restaurants' do
 		end
 	end
 
+	context 'uploading restaurant images' do 
+
+		scenario 'adds an image to a restaurant profile' do 
+			create_user
+		    visit '/restaurants'
+		    click_link 'Add a restaurant'
+		    fill_in 'Name', with: 'KFC'
+		    attach_file('restaurant_image', '../restaurants/spec/support/kfc.jpg')
+		    click_button 'Create Restaurant'
+		    expect(page).to have_css("img[src*='kfc.jpg']")
+		end 
+	end 
+
 end
