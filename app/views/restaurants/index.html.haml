@@ -19,8 +19,7 @@
           %li
             #{review.thoughts} Average rating: #{star_rating(review.rating)}
             = link_to "Endorse Review", review_endorsements_path(review), class: 'endorsements-link'
-            %span.endorsements_count= review.endorsements.count 
-            = 'endorsement'.pluralize review.endorsements.count
+            %span.endorsements_count= pluralize(review.endorsements.count, 'endorsement') 
 
     - else
       %p No reviews

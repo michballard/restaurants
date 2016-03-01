@@ -88,6 +88,11 @@ feature 'restaurants' do
 			expect(page).not_to have_content 'KFC'
 			expect(page).to have_content 'Restaurant deleted successfully'
 		end
+		# scenario 'also removes associated reviews and endorsements' do 
+		# 	create_user
+		# 	create_restaurant
+			
+		# end 
 	end
 
 	context 'uploading restaurant images' do 
